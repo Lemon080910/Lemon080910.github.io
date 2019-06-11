@@ -1,1 +1,93 @@
-hello
+<!doctype html>
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1">
+  <title>数据校验工具</title>
+
+  <!-- Set render engine for 360 browser -->
+  <meta name="renderer" content="webkit">
+
+  <!-- No Baidu Siteapp-->
+  <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="AmazeUI-2.7.2/assets/i/app-icon72x72@2x.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Amaze UI"/>
+  <link rel="apple-touch-icon-precomposed" href="AmazeUI-2.7.2/assets/i/app-icon72x72@2x.png">
+
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="AmazeUI-2.7.2/assets/i/app-icon72x72@2x.png">
+  <meta name="msapplication-TileColor" content="#0e90d2">
+
+  <link rel="stylesheet" href="AmazeUI-2.7.2/assets/css/amazeui.min.css">
+  <link rel="stylesheet" href="AmazeUI-2.7.2/assets/css/app.css">
+  
+  <style>
+
+  </style>
+  
+</head>
+<body>
+
+<form class="am-form">
+  <fieldset>
+    <legend id="status" align="middle" >TEST</legend>
+	
+	 <div class="am-radio">
+      <label>
+        <input type="radio" name="doc-radio-1" value="option1" checked>
+        无空格
+      </label>
+    </div>
+
+    <div class="am-radio">
+      <label>
+        <input type="radio" name="doc-radio-1" value="option2"id="space">
+        有空格
+      </label>
+    </div>
+
+    <div class="am-form-group">
+      <label for="doc-ta-1">输入原始数据: </label>
+      <textarea class="" rows="5" id="rawData"></textarea>
+    </div>
+
+    <p><button type="button" class="am-btn am-btn-default" onclick="showstr()">计算</button></p>
+	
+	  <div class="am-form-group">
+      <label for="doc-ta-1">添加空格: </label>
+      <textarea class="" rows="5" id="rawDataAddSpace"></textarea>
+    </div>
+	<div class="am-input-group">
+	  <span class="am-input-group-label">异或和</span>
+	  <input type="text" class="am-form-field" id="XOR">
+	  <span class="am-input-group-label">累加和</span>
+	  <input type="text" class="am-form-field" id="SUN">
+	  <span class="am-input-group-label">长度</span>
+	  <input type="text" class="am-form-field" id="LEN">
+	</div>
+  </fieldset>
+</form>
+
+<script src="AmazeUI-2.7.2/assets/js/jquery-3.4.1.min.js"></script>
+
+<script src="AmazeUI-2.7.2/assets/js/amazeui.min.js"></script>
+<script src="calc.js">
+</script>
+
+<!--<button type="submit" class="am-btn am-btn-primary am-btn-sm"><i class="am-icon-check"></i> 提 交</button>-->
+
+</body>
+</html>
