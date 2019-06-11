@@ -2,10 +2,16 @@ function showstr(){
 var str=document.getElementById("rawData").value;
 
 	str = str.toUpperCase();
+	
+	var space=new Boolean("false");
+	
 	if(document.getElementById("space").checked){
 		str = str.replace(/\s*/g,"");
+		space = true;
 	}else{
 		//alert(isHaveSpace(str).toString());	
+		space = false;
+		
 	}
 	if(isHexString(str)==false){
 		document.getElementById("status").innerHTML = "有非十六进制字符";
@@ -15,10 +21,22 @@ var str=document.getElementById("rawData").value;
 		var str_arr = new Array();
 		document.getElementById("LEN").value=str.length/2;
 		document.getElementById("rawDataAddSpace").value="";
-		for(var i=0;i<str.length/2;i++){
-			str_arr[i]=str.slice(i*2,i*2+2);
-			document.getElementById("rawDataAddSpace").value+=str_arr[i]+" ";
+		
+			if(space == false){
+					document.getElementById("lbl_1").innerHTML="添加空格"
+					for(var i=0;i<str.length/2;i++){
+					str_arr[i]=str.slice(i*2,i*2+2);
+					document.getElementById("rawDataAddSpace").value+=str_arr[i]+" ";
+				}
+			}else{
+				document.getElementById("lbl_1").innerHTML="去除空格"
+				for(var i=0;i<str.length/2;i++){
+				str_arr[i]=str.slice(i*2,i*2+2);
+				document.getElementById("rawDataAddSpace").value+=str_arr[i];
+			}
 		}
+		
+		
 		calc_XOR(str_arr);
 		calc_SUN(str_arr);
 	}
